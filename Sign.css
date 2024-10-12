@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Light background for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height to center vertically */
+  margin: 0;
+}
+
+fieldset {
+  border: 2px solid rgb(192, 36, 189);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  background-color: white; /* White background for form */
+}
+
+h1 {
+  color: rgb(192, 36, 189);
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* Full width inputs */
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  border: 1px solid rgb(192, 36, 189);
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: blue; /* Submit button color */
+  color: white; /* Text color for submit button */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Pointer cursor on hover */
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(192, 36, 189); /* Change color on hover */
+}
+
+span#facebook,
+span#google {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 5px 10px;
+  color: white;
+  background-color: blue; /* Button-like appearance */
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer; /* Pointer cursor */
+}
+
+span#facebook:hover,
+span#google:hover {
+  background-color: rgb(192, 36, 189); /* Change on hover */
+}
+
+a {
+  color: rgb(192, 36, 189); /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+text{
+  color: rgb(174, 36, 128);
+  text-align: center;
+}
