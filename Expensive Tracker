@@ -26,3 +26,64 @@
 </body>
 
 <---------------------------------------------------------------------------------------- JavaScript --------------------------------------------------------------------------------------------------------------->
+// Select DOM elements
+const expenseForm = document.getElementById('expense-form');
+const expenseList = document.getElementById('expense-list');
+
+let expenses = []; // Array to store expenses
+
+// Add Expense
+expenseForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const amount = document.getElementById('amount').value;
+    const description = document.getElementById('description').value;
+    const category = document.getElementById('category').value;
+
+    if (amount && description && category) {
+        const expense = {
+            id: Date.now(),
+            amount: parseFloat(amount),
+            description,
+            category
+        };
+
+        expenses.push(expense);
+        console.log('Expense Added:', expense);
+        renderExpenses();
+        expenseForm.reset();
+    }
+});
+
+// Render Expenses
+function renderExpenses() {
+    expenseList.innerHTML = '';
+    expenses.forEach(expense => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            ${expense.amount} - ${expense.description} (${expense.category})
+            <button onclick="editExpense(${expense.id})">Edit</button>
+            <button onclick="deleteExpense(${expense.id})">Delete</button>
+        `;
+        expenseList.appendChild(li);
+    });
+}
+
+// Edit Expense
+function editExpense(id) {
+    const expense = expenses.find(exp => exp.id === id);
+    if (expense) {
+        document.getElementById('amount').value = expense.amount;
+        document.getElementById('description').value = expense.description;
+        document.getElementById('category').value = expense.category;
+
+        deleteExpense(id); // Remove the old expense so it can be replaced
+    }
+}
+
+// Delete Expense
+function deleteExpense(id) {
+    expenses = expenses.filter(exp => exp.id !== id);
+    console.log('Expense Deleted:', id);
+    renderExpenses();
+}
