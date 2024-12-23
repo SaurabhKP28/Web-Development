@@ -30,7 +30,7 @@
 const expenseForm = document.getElementById('expense-form');
 const expenseList = document.getElementById('expense-list');
 
-let expenses = []; // Array to store expenses
+let expenses = JSON.parse(localStorage.getItem('expenses')) || []; // Load expenses from localStorage
 
 // Add Expense
 expenseForm.addEventListener('submit', (e) => {
@@ -49,6 +49,7 @@ expenseForm.addEventListener('submit', (e) => {
         };
 
         expenses.push(expense);
+        localStorage.setItem('expenses', JSON.stringify(expenses)); // Save to localStorage
         console.log('Expense Added:', expense);
         renderExpenses();
         expenseForm.reset();
@@ -84,6 +85,10 @@ function editExpense(id) {
 // Delete Expense
 function deleteExpense(id) {
     expenses = expenses.filter(exp => exp.id !== id);
+    localStorage.setItem('expenses', JSON.stringify(expenses)); // Update localStorage
     console.log('Expense Deleted:', id);
     renderExpenses();
 }
+
+// Initial render
+renderExpenses();
