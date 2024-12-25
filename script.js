@@ -18,7 +18,7 @@ function run() {
           ${jsCode}
         } catch (error) {
           document.body.innerHTML += '<div style="color: red;">' + error.message + '</div>';
-        }
+        } 
       </script>
     </body>
     </html>
