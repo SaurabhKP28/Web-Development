@@ -1,87 +1,68 @@
-*
-{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-h2{
+
+body {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+}
+
+.container {
+  background: #28c17e;
+  text-align: center;
+}
+
+.container h1 {
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.editor {
+  background-color: #252744;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem;
+  height: calc(100vh - 70px);
 }
 
-body, html {
-  height: 100%;
-  margin: 0;
+.left, .right {
+  flex: 1;
+  padding: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  box-shadow: #596dd1;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  flex-direction: column;
 }
 
-fieldset
-{
+label {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 250px;
-  width: 400px;
-border-radius: 15px; /* Adds rounded corners */
-border: 2px solid #000; /* Customize border thickness and color */
-box-shadow: #596dd1;
-background: transparent;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
-#name
-{
-  margin: 10px;
-  padding: 5px;
-  width: 250px;
-  border-radius: 15px;
+label i {
+  padding-right: 5px;
 }
 
-#pass
-{
-  margin: 10px;
-  padding: 5px;
-  width: 250px;
-  border-radius: 15px;
-}
-
-#box
-{
-  margin-left: 15px;
-  padding: 0px;
-}
-
-#for
-{
-  margin-left: 50px;
-  padding: 0px;
-}
-
-.btn
-{margin: 10px;
-  padding: 5px;
-  width: 250px;
-  border: black;
+textarea {
+  flex: 1;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: none;
   outline: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0 , 0 , 0 , .1);
-  color: #000;
-  border-radius: 15px; /* Adds rounded corners */
+  font-size: 16px;
+  padding: 10px;
+  font-family: monospace;
+  resize: vertical;
+  margin-bottom: 10px;
 }
 
-.btn:hover {
-  background-image: linear-gradient( 90.5deg,  rgba(152,45,255,1) 0.7%, rgba(90,241,255,1) 51.5%, rgba(65,239,164,1) 100.6% );
-}
-
-#reg
-{
-  margin: 5px;
-  margin-left: 33px;
-  
+iframe {
+  flex: 1;
+  background-color: white;
+  border: none;
 }
