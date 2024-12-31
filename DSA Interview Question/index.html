@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Track your DSA problem-solving progress with this interactive tracker. Practice data structures and algorithms with categorized problems." />
+    <meta name="keywords" content="DSA, Data Structures, Algorithms, Problem Solving, Coding Practice, Programming" />
+    <meta name="author" content="Your Name" />
+    <meta property="og:title" content="DSA 500 - Problem Tracker" />
+    <meta property="og:description" content="Track your DSA problem-solving progress with this interactive tracker." />
+    <meta property="og:type" content="website" />
+    <title>DSA 500 - Problem Tracker | Practice Data Structures and Algorithms</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styless.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+</head>
+<body>
+ 
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1> DSA Interview Question</h1> 
+            <div class="progress-container">
+                <div class="progress-text">Overall Progress: <span id="progress-count">0/500</span></div>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <a href="index.html" id="questionsLink"><i class='bx bxs-book-reader'></i> Questions</a>
+                <a href="tips.html" id="tipsLink"><i class='bx bx-select-multiple'></i> Tips</a>
+                <a href="acknowledgements.html" id="acknowledgementsLink"><i class='bx bx-medal'></i> Acknowledgements</a>
+            </div>
+        </div>
+        
+    </nav>
+    <main>
+        <div class="cta-banner">
+            <p>"Code is like a puzzle every bug you fix and every line you write brings you closer to mastering the art of creation."</p>
+          </div>
+        <div id="questionsPage" class="page active">
+        <div class="filters">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="Array">Arrays</option>
+                <option value="String">String</option>
+                <option value="Linked List">Linked List</option>
+                <option value="Stacks & Queues">Stacks & Queues</option>
+                <option value="Tree">Tree</option>
+                <option value="Graph">Graph</option>
+                <option value="Dynamic Programming">Dynamic Programming</option>
+                <option value="Matrix">Matrix</option>
+                <option value="Searching & Sorting">Searching & Sorting</option>
+                <option value="Binary Search">Binary Search</option> 
+                <option value="Recursion">Recursion</option>
+                <option value="Two Pointer">Two Pointer</option>
+            </select>
+
+            <select id="difficulty-filter">
+                <option value="all">All Difficulties</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <select id="status-filter">
+                <option value="all">All Status</option>
+                <option value="solved">Solved</option>
+                <option value="unsolved">Unsolved</option>
+            </select>
+        </div>
+      
+        <div class="problems-container" id="problems-list">
+            <!-- Problems will be populated here by JavaScript -->
+        </div>
+    </div>
+    <div id="tipsPage" class="page">
+        <h2>DSA Learning Tips</h2>
+        <div class="tips-container">
+            <div class="tip-card">
+                <h3>Start with Basics</h3>
+                <p>Master fundamental data structures like arrays, linked lists, and basic algorithms before moving to complex topics.</p>
+            </div>
+            <div class="tip-card">
+                <h3>Practice Daily</h3>
+                <p>Consistency is key. Solve at least one problem every day to build problem-solving skills.</p>
+            </div>
+            <!-- Add more tips as needed -->
+        </div>
+    </div>
+
+    <div id="acknowledgementsPage" class="page">
+        <h2>Learning Resources</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/sample1" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Arrays Masterclass</h3>
+            </div>
+            <div class="resource-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/sample2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Dynamic Programming Guide</h3>
+            </div>
+            <!-- Add more resource cards as needed -->
+        </div>
+    </div>
+    </main>
+
+    <!-- Note Modal -->
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Note for <span id="problem-title"></span></h2>
+            <textarea id="note-textarea" rows="6"></textarea>
+            <div class="modal-actions">
+                <button id="save-note-btn" class="note-btn">Save</button>
+                <button id="delete-note-btn" class="note-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <a href="https://github.com/SaurabhKP28" target="_blank" class="project-btn"><i class='bx bxl-github'></i></a>
+            <button id="night-mode-toggle">☀️</button>
+            <div class="cta">
+               <p><i>SAURABH</i></p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/data/problems.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/utils/filters.js"></script>
+    <script src="js/components/problemCard.js"></script>
+    <script src="js/components/modal.js"></script>
+   <script src="js/features/nightMode.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
