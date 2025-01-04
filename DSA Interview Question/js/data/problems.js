@@ -8,7 +8,7 @@
       description: "Concatenate an array with itself."
     },
     {
-      id: 2,
+      id: 2, 
       title: "Shuffle the Array",
       difficulty: "easy",
       category: "Array",
