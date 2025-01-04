@@ -17,7 +17,7 @@
     },
     {
       id: 3,
-      title: "Kids With the Greatest Number of Candies",
+      title: "Kids With the Greatest Number of Candies", 
       difficulty: "easy",
       category: "Array",
       link: "https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/",
