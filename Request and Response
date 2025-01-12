@@ -1,0 +1,41 @@
+
+In the http module, what does the req object represent in a server callback function?
+
+
+
+In the http module, what role does the res object play in the server callback?
+
+Select one answer
+
+Which method allows you to set an individual HTTP header on the res object in the http module?
+
+Select one answer
+
+In the http module, which function is called to finish and send the response to the client?
+
+
+Select one answer
+
+ Which of the following correctly describes HTTP headers in a request handled by Node.js’s http module?
+
+
+Select one answer
+
+What is the default HTTP status code if none is explicitly set when sending a response?
+
+Select one answer
+
+When using the http module, how can you set multiple headers and a status code in a single command before sending a response?
+
+
+Select one answer
+
+ Which of the following is a correct way to listen for the server's listening event in the Node.js http module?
+
+Select one answer
+
+Which method would you use to handle query parameters in a URL in a Node.js HTTP server?
+
+Select one answer
+
+How can you set the Content-Type header to text/html in a Node.js HTTP response using the http module?
