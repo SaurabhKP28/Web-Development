@@ -1,41 +1,48 @@
+Deliverable
+
+Task 1:
+
+Complete the mcq's after understanding the concepts of request and response.
+
+
+
+Task 2:
+
+As we return the responses to as 'Hello World' for url '/' and 'This is your pizza' for url '/pizza'.
+Based on the url the user hits , I want you to return custom responses.
+When url = /home , return response as 'Welcome home'
+When url = /about, return response as 'Welcome to About Us'
+When url =/node, return response as 'Welcome to my Node Js project'
+When url is anything else expect '/home,/about,/node' return 'Page Not Found' .﻿
+3.The responses should appear on the webpage as an added html element.
+
 
 In the http module, what does the req object represent in a server callback function?
-
-
+Ans -> The HTTP request received from Client.
 
 In the http module, what role does the res object play in the server callback?
-
-Select one answer
+Ans -> The res object is used to send back the HTTP response to the client.
 
 Which method allows you to set an individual HTTP header on the res object in the http module?
-
-Select one answer
+Answer: res.setHeader(name, value)
 
 In the http module, which function is called to finish and send the response to the client?
+Answer: res.end()
 
-
-Select one answer
-
- Which of the following correctly describes HTTP headers in a request handled by Node.js’s http module?
-
-
-Select one answer
-
+Which of the following correctly describes HTTP headers in a request handled by Node.js’s http module?
+Answer: HTTP headers are key-value pairs that provide metadata about the request or response.
 What is the default HTTP status code if none is explicitly set when sending a response?
 
-Select one answer
-
+Answer: 200
 When using the http module, how can you set multiple headers and a status code in a single command before sending a response?
 
+Answer: res.writeHead(statusCode, headers)
+Which of the following is a correct way to listen for the server's listening event in the Node.js http module?
 
-Select one answer
-
- Which of the following is a correct way to listen for the server's listening event in the Node.js http module?
-
-Select one answer
-
+Answer: server.listen(port, callback)
 Which method would you use to handle query parameters in a URL in a Node.js HTTP server?
 
-Select one answer
-
+Answer: Use the url module's url.parse(req.url, true) method to extract query parameters.
 How can you set the Content-Type header to text/html in a Node.js HTTP response using the http module?
+
+Answer: res.setHeader('Content-Type', 'text/html')
