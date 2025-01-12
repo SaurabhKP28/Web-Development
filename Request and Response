@@ -31,18 +31,18 @@ Answer: res.end()
 
 Which of the following correctly describes HTTP headers in a request handled by Node.js’s http module?
 Answer: HTTP headers are key-value pairs that provide metadata about the request or response.
+
 What is the default HTTP status code if none is explicitly set when sending a response?
-
 Answer: 200
+
 When using the http module, how can you set multiple headers and a status code in a single command before sending a response?
-
 Answer: res.writeHead(statusCode, headers)
+
 Which of the following is a correct way to listen for the server's listening event in the Node.js http module?
-
 Answer: server.listen(port, callback)
+
 Which method would you use to handle query parameters in a URL in a Node.js HTTP server?
-
 Answer: Use the url module's url.parse(req.url, true) method to extract query parameters.
-How can you set the Content-Type header to text/html in a Node.js HTTP response using the http module?
 
+How can you set the Content-Type header to text/html in a Node.js HTTP response using the http module?
 Answer: res.setHeader('Content-Type', 'text/html')
