@@ -1,1 +1,46 @@
+const http = require('http');
+const fs = require('fs');
+const querystring = require('querystring');
+
+const filePath = 'messages.txt';
+
+http.createServer((req, res) => {
+    if (req.method === 'GET') {
+        // Read the latest message from the file and display it
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            const messages = data ? data : '';
+            const html = `
+                <html>
+                <head><title>Message Board</title></head>
+                <body>
+                    <div>${messages}</div>
+                    <form method="POST" action="/">
+                        <input type="text" name="message" required />
+                        <button type="submit">Send</button>
+                    </form>
+                </body>
+                </html>
+            `;
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(html);
+        });
+    } else if (req.method === 'POST') {
+        // Collect form data and overwrite the file with the new message
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', () => {
+            const { message } = querystring.parse(body);
+            const formattedMessage = encodeURIComponent(message).replace(/%20/g, '+');
+            fs.writeFile(filePath, formattedMessage, err => {
+                if (err) throw err;
+                res.writeHead(302, { Location: '/' });
+                res.end();
+            });
+        });
+    }
+}).listen(3001, () => {
+    console.log('Server running at http://localhost:3001');
+});
 
