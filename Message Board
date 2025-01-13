@@ -13,7 +13,7 @@ http.createServer((req, res) => {
                 <html>
                 <head><title>Message Board</title></head>
                 <body>
-                    <div>${messages}</div>
+                    <div>${messages}</div> 
                     <form method="POST" action="/">
                         <input type="text" name="message" required />
                         <button type="submit">Send</button>
