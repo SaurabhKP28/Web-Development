@@ -1,0 +1,68 @@
+Key Concepts in Node.js
+1. Nodemon
+Purpose: Automatically restarts the Node.js application whenever file changes are detected in the directory. It aids in speeding up development by eliminating the need for manual restarts.
+Installation Command:
+Globally: npm install -g nodemon
+Locally: npm install nodemon
+2. package.json File
+Role: Serves as the central metadata file for a Node.js project. It contains:
+Project name, version, and description.
+Scripts to automate tasks such as starting the server or running tests.
+Dependencies and devDependencies.
+Configuration and custom fields as needed.
+3. Dependencies in Node.js
+Dependencies ("dependencies"):
+Essential packages required for the application to run in production.
+Installed using npm install <package-name>.
+DevDependencies ("devDependencies"):
+Packages needed only for development, such as testing or build tools.
+Installed using npm install <package-name> --save-dev.
+4. NPM Commands
+Install a Package:
+Regular Dependency: npm install <package-name>
+Dev Dependency: npm install <package-name> --save-dev
+Uninstall a Package:
+npm uninstall <package-name>
+Install Production Dependencies Only:
+npm install --production
+Answers to Questions:
+1. What is the purpose of nodemon in a Node.js application?
+Answer: To automatically restart the Node.js application when file changes in the directory are detected.
+
+2. Which command is used to install nodemon globally?
+Answer: npm install -g nodemon
+
+3. What is the role of the package.json file in a Node.js project?
+Answer: It serves as the metadata file for the project, defining dependencies, scripts, and other project configurations.
+
+4. Which section of package.json is used to specify the scripts to run commands?
+Answer: The "scripts" section.
+
+5. How do you install a package as a regular dependency (normal dependency)?
+Answer: npm install <package-name>
+
+6. What is the difference between "dependencies" and "devDependencies" in package.json?
+Answer:
+
+Dependencies are required for production.
+DevDependencies are used only for development.
+7. Which of the following is true when you run npm install --production?
+Answer: Only "dependencies" are installed, while "devDependencies" are skipped.
+
+8. Which command is used to install a package as a dev dependency?
+Answer: npm install <package-name> --save-dev
+
+9. What command would you use to uninstall a package using npm?
+Answer: npm uninstall <package-name>
+
+10. Which of the following is NOT a default field created in package.json when running npm init?
+Answer: "repository"
+
+Summary
+Nodemon is an essential development tool for automatic restarts. The package.json file centralizes project configuration, specifying scripts and dependencies. Regular dependencies are critical for production, while devDependencies focus on development tasks. The npm commands streamline package management, making it simple to install, uninstall, or target specific dependency types.
+
+
+
+
+
+
