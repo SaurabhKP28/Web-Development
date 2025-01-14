@@ -1,1 +1,81 @@
+Why are we using Express.js? Any reasons?
+Express.js is a minimal and flexible Node.js web application framework that provides robust features for web and mobile applications. Reasons to use it include:
 
+Routing: Offers a sophisticated routing mechanism to handle URL requests.
+Middleware: Allows processing requests through middleware to modify the request/response object or perform operations.
+Simplified API: Provides a streamlined way to manage HTTP methods and responses.
+Community Support: Large community with many open-source modules.
+Integration: Easily integrates with databases like MongoDB and libraries like Passport.js for authentication.
+Install Express.js
+Run the following command in your terminal to install Express.js in a Node.js project:
+
+bash
+Copy code
+npm install express
+What are middlewares?
+Middlewares are functions that execute during the request-response lifecycle. They have access to the req (request), res (response), and next objects. They are primarily used for:
+
+Modifying requests and responses (e.g., adding headers).
+Logging.
+Authentication.
+Error handling.
+What is next used for?
+The next function is used to pass control to the next middleware function in the stack. If next() is not called, the request will remain hanging. For example:
+
+javascript
+Copy code
+app.use((req, res, next) => {
+  console.log('Middleware 1');
+  next(); // Passes control to the next middleware
+});
+What is res.send used for?
+The res.send() method sends a response to the client and automatically sets the appropriate Content-Type header. It can send:
+
+HTML strings.
+JSON objects.
+Buffers.
+If I do res.send('<h1> hello to node js </h1>'), what will the Content-Type header be equal to?
+The Content-Type header will be set to:
+
+arduino
+Copy code
+text/html; charset=utf-8
+If I do res.send({ key1: value }), what will the Content-Type header be equal to?
+The Content-Type header will be set to:
+
+bash
+Copy code
+application/json; charset=utf-8
+What does app.listen(3000) do behind the scenes?
+The app.listen(3000) function starts a server that listens for incoming requests on port 3000. Behind the scenes:
+
+It creates an HTTP server using Node.js.
+Sets up the Express app to handle incoming requests based on the defined routes and middleware.
+Begins listening for client connections on the specified port.
+Code with two middlewares and app.listen:
+javascript
+Copy code
+const express = require('express');
+const app = express();
+
+// Middleware 1: Logging requests
+app.use((req, res, next) => {
+  console.log(`Request Method: ${req.method}, URL: ${req.url}`);
+  next();
+});
+
+// Middleware 2: Adding a custom header
+app.use((req, res, next) => {
+  res.setHeader('X-Custom-Header', 'Learning Express.js');
+  next();
+});
+
+// Route
+app.get('/', (req, res) => {
+  res.send('<h1>Hello to Node.js</h1>');
+});
+
+// Start server
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
