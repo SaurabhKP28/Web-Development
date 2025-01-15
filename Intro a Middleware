@@ -1,1 +1,7 @@
+Deliverables: -
+
+Create the /add-product route which shows a form. Once user has filled , console log it after parsing it using bodyparser.
+What is the body parser used for?
+Now add one more input tag in the add product page so that user can input size of the product.
+When the user clicks on submit parse both the input tags and show it in console.
 
