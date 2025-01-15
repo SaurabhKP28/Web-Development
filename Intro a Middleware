@@ -5,3 +5,46 @@ What is the body parser used for?
 Now add one more input tag in the add product page so that user can input size of the product.
 When the user clicks on submit parse both the input tags and show it in console.
 
+***********************************************************************************************CODE*********************************************************************************************************************
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+
+//First Middleware
+app.use((req , res , next) => {
+   console.log("First Dummy Middleware" , req.url, req.method);
+   next();
+})
+
+// Middleware for parsing request body
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Routes
+app.get("/", (req, res, next) => {
+    console.log("Handling / for GET", req.url, req.method);
+    res.send(`<h1>Welcome to project</h1>`);
+});
+// Add Product Route
+app.get("/add-product", (req, res, next) => {
+  console.log("Handling /add-product for GET", req.url, req.method);
+  res.send(`
+      <h1>Add a New Product</h1>
+      <form action="/add-product" method="POST">
+          <input type="text" name="productName" placeholder="Enter product name" />
+          <input type="text" name="productSize" placeholder="Enter product size" />
+          <input type="submit" value="Add Product" />
+      </form>
+  `);
+});
+
+app.post("/add-product", (req, res, next) => {
+  console.log("Handling /add-product for POST", req.url, req.method, req.body);
+  console.log(`Product Name: ${req.body.productName}, Product Size: ${req.body.productSize}`);
+  res.send('<h1>Product Added Successfully</h1>');
+});
+
+// Start server
+const PORT = 3001;
+app.listen(PORT, () => {
+  console.log(`Server running on address http://localhost:${PORT}`);
+});
